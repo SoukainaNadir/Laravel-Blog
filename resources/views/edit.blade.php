@@ -1,7 +1,7 @@
 @extends('master.layout')
 
 @section('title')
-    Publier   
+    Modifier {{ $post->title }}  
 @endsection
 
 @section('style')
@@ -27,18 +27,20 @@
             <div class="card" style="margin-top: 60px">
                 <div class="card-header">
                     <h3 class="card-title">
-                        Ajouter une publication
+                        Modifier {{ $post->title }}
                     </h3> 
                 </div>
                 <div class="card-body">
                     <form action="{{ route('post.store') }}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Titre</label>
-                            <input type="text" class="form-control" name="title" placeholder="Titre" required> </div>
+                            <label for="exampleInput1" class="form-label">Titre</label>
+                            <input type="text" class="form-control" 
+                            value="{{ $post->title }}"
+                            name="title" placeholder="Titre" required > </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label" >Description</label>
-                            <textarea type="password" class="form-control" name="body" rows="3" placeholder="Description"></textarea>
+                            <label for="exampleInput2" class="form-label" >Description</label>
+                            <textarea type="password" class="form-control" name="body" rows="3" placeholder="Description">{{ $post->body }}</textarea>
                         </div>
                         <div class="mb-3 form-check">
                             <input type="file" class="form-check-input" name="image">
@@ -52,7 +54,6 @@
     </div>
 @endsection
 
- 
 @section('script')
     <script>    
         
