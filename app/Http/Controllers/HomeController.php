@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Str;
+use App\Http\Requests\PostRequest;
 
 class HomeController extends  controller
 {
@@ -33,7 +34,7 @@ class HomeController extends  controller
         return view('create');
     }
 
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
         $this->validate($request,[
             'title'=>'required|min:3|max:100',
@@ -45,8 +46,8 @@ class HomeController extends  controller
             $image_name = time() .'_'. $file->getClientOriginalName(); 
             $file->move('uploads',$image_name);
         }
-
-        Post::create([   
+ 
+        Post::create([
             'title'=>$request->title,
             'body' =>$request->body,
             'slug'=>Str::slug($request->title),

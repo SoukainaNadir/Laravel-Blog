@@ -18,6 +18,12 @@
 @section('content')
     <div class="row " style="justify-content: center; margin-top:60px">
         <div class="col-md-8">
+            @if (session()->has('success'))
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+                
+            @endif
             <div class="row">
                 @foreach ($posts as $post)
                     <div class="col-md-4">

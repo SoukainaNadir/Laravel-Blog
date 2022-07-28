@@ -7,7 +7,7 @@
 @section('style')
     <style>
         body{
-            background-color:rgb(235, 134, 134);
+            background-color:rgb(124, 119, 119);
         }
     </style>
 @endsection
@@ -35,7 +35,7 @@
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Titre</label>
-                            <input type="text" class="form-control" name="title" placeholder="Titre"> </div>
+                            <input type="text" class="form-control" name="title" placeholder="Titre" required> </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label" >Description</label>
                             <textarea type="password" class="form-control" name="body" rows="3" placeholder="Description"></textarea>
