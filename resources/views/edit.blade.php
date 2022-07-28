@@ -31,9 +31,10 @@
                     </h3> 
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('post.store') }}" method="POST">
+                    <form action="{{ route ('post.update',$post->slug) }}" method="post" enctype="multipart/form-data">
                         @csrf
-                        <div class="mb-3">
+                        @method('PUT')
+                        <div class="mb-3"> 
                             <label for="exampleInput1" class="form-label">Titre</label>
                             <input type="text" class="form-control" 
                             value="{{ $post->title }}"
