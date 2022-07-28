@@ -21,17 +21,17 @@
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
                         @endforeach
-                    </ul>
+                    </ul> 
                 </div>
             @endif
-            <div class="card" style="margin-top: 60px">
+            <div class="card" style="margin-top: 0px">
                 <div class="card-header">
                     <h3 class="card-title">
                         Ajouter une publication
                     </h3> 
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('post.store') }}" method="POST">
+                    <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Titre</label>
@@ -52,7 +52,6 @@
     </div>
 @endsection
 
- 
 @section('script')
     <script>    
         

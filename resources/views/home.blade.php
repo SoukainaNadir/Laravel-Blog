@@ -23,11 +23,12 @@
                     <div class="col-md-4">
                         <div class="card mb-4 mt-5 ">
                             <div class="card" style=" height:450px;">
-                                <img class="card-img-top" src="{{$post->image}}" alt="Card image cap">
+                                <img class="card-img-top" src="{{asset('uploads/'.$post->image)}}" alt="Card image cap">
                                     <div class="card-body ">
                                         <h5 class="card-title">{{$post->title}}</h5>
+                                        <h6 class="card-title">{{$post->user ? $post->user->name : null}}</h6>
                                         <p class="card-text"> {{ Str::limit($post->body, 100)}} </p>
-                                        <a href="{{route('post.show',$post->slug)}}" class="btn btn-primary">voir</a>
+                                        <a href="{{route('post.show', $post->slug)}}" class="btn btn-primary">voir</a>
                                     </div>
                             </div>
                         </div>
