@@ -28,6 +28,9 @@
                                     <p class="card-text"> {{ $post->body, 100}} </p>
                                 </div>
                         </div>
+                        <a href="{{ route('post.edit',$post->slug) }}" class="btn btn-warning">
+                            Modifier
+                        </a>
                     </div>
                 </div>
             </div> 
